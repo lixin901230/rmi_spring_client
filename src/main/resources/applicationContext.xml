@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://code.alibabatech.com/schema/context"
+	xsi:schemaLocation="http://code.alibabatech.com/schema/context http://code.alibabatech.com/schema/context/context.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+	
+	<!-- Spring 获取bean工具类注入 -->
+	<bean id="WebApplicationContext" class="com.lx.rmi.spring.util.ApplicationContextHelper" scope="prototype"></bean>
+	
+	<bean id="rmiProxyFactoryBean" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+		<property name="serviceUrl" value="rmi://localhost:1099/rmiService"/>
+		<property name="serviceInterface" value="com.lx.rmi.service.IRmiService"></property>
+	</bean>
+	
+	
+</beans>
